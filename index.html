@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Color Game</title>
+  <link rel="icon" type="image/png" href="download.png">
+	<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Montserrat');
+	body, html{
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+.a{
+	font-family: Montserrat;
+	font-size: 50px;
+	text-align: center;
+	color :white;
+
+	
+}
+.up{
+	position: absolute;
+	width: 100%;
+	height: 250px;
+	top:0;
+	background-color: #053B3E;
+}
+
+.color{
+	font-family: Montserrat;
+	font-size: 50px;
+	text-align: center;
+	color: white;
+}
+
+.easy{
+	font-family: Montserrat;
+	font-size: 15px;
+	text-align: center;
+	background-color: #053B3E;
+	color: white;
+
+	font-weight: 800;
+}
+.hard{
+	font-family: Montserrat;
+	font-size: 15px;
+	
+	background-color: #053B3E;
+	color: white;
+	font-weight: 800;
+}
+.newcolors{
+	font-family: Montserrat;
+	font-size: 15px;
+	background-color: #053B3E;
+	color: white;
+	margin-right: 100px;
+	font-weight: 800;
+}
+.barr{
+	
+	background-color: #053B3E;
+	text-align: center;
+	top: 0;
+	margin-top: 250px;
+}
+.circle1 {
+  height: 175px;
+  width: 175px;
+  position: absolute;
+  margin-left: 350px;
+  top: 0;
+  margin-top: 300px;
+  background-color: #053B3E;
+  border-radius: 50%;
+  border: solid 1px white;
+
+}
+.circle1: hover{
+	
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+}
+
+.circle2 {
+  height: 175px;
+  width: 175px;
+  position: absolute;
+  margin-left: 610px;
+  top: 0;
+  margin-top: 300px;
+  background-color: #053B3E;
+  border-radius: 50%;
+  border: solid 1px white;
+
+}
+.circle3 {
+  height: 175px;
+  width: 175px;
+  position: absolute;
+  margin-left: 870px;
+  top: 0;
+  margin-top: 300px;
+  background-color: #053B3E;
+  border-radius: 50%;
+  border: solid 1px white;
+
+}
+.circle4 {
+  height: 175px;
+  width: 175px;
+  position: absolute;
+  margin-left: 350px;
+  top: 0;
+  margin-top: 480px;
+  background-color: #053B3E;
+  border: solid 1px white;
+  border-radius: 50%;
+}
+.circle5 {
+  height: 175px;
+  width: 175px;
+  position: absolute;
+  margin-left: 610px;
+  top: 0;
+  margin-top: 480px;  
+  background-color: #053B3E;
+  border-radius: 50%;
+  border: solid 1px white;
+
+}
+.circle6 {
+  height: 175px;
+  width: 175px;
+  position: absolute;
+  margin-left: 870px;
+  top: 0;
+  margin-top: 480px;
+  position: absolute;
+  background-color: #053B3E;
+  border-radius: 50%;
+  border: solid 1px white;
+
+}
+.circle7 {
+  height: 0.1px;
+  width: 0.1px;
+  position: absolute;
+  margin-left: 1770px;
+  top: 0;
+  margin-top: 480px;
+  position: absolute;
+  background-color: #053B3E;
+  border-radius: 50%;
+  border: solid 1px white;
+
+}
+
+
+</style>
+</head>
+<body>
+
+	<div class="up" >
+		<p class="a" id="ss">THE GREAT GAME</p>
+		<p class="color" > RGB(<span id="aa">a</span>,<span id="bb">b</span>,<span id="cc">c</span>)</p>
+	</div>
+	<div class="barr">
+		<button class="newcolors" id="newc">NEW COLORS</button>
+		<span class="barr" ></span>
+		<button class="easy" id="easy">EASY</button>
+		<span class="barr"></span>
+	 	<button class="hard" id="hard">HARD</button>
+	</div>
+	<button type="button" class="circle1" id="c1" ></button>
+	<button type="button" class="circle2" id="c2"></button>
+	<button type="button" class="circle3" id="c3"></button>
+	<button type="button" class="circle4" id="c4"></button>
+	<button type="button" class="circle5" id="c5"></button>
+	<button type="button" class="circle6" id="c6"></button>
+	<button type="button" class="circle7" id="c6"></button>
+	
+</body>
+<script>
+	function makeid()
+    {
+    var randomnumber=Math.floor(Math.random() * 255);
+    return Math.floor(Math.random() * 255);
+}
+var min=1; 
+var max=6;  
+var random = Math.random() * (+max - +min) + +min; 
+
+var newc=document.querySelector("#newc");
+
+var bc1=document.querySelector("#c1");
+var bc2=document.querySelector("#c2");
+var bc3=document.querySelector("#c3");
+var bc4=document.querySelector("#c4");
+var bc5=document.querySelector("#c5");
+var bc6=document.querySelector("#c6");
+
+var easy=document.querySelector("#easy");
+var hard=document.querySelector("#hard");
+
+var aa=document.querySelector("#aa");
+var bb=document.querySelector("#bb");
+var cc=document.querySelector("#cc");
+var a1=aa.textContent;
+	var b1=bb.textContent;
+	var c1=cc.textContent;
+	var a2=makeid();
+	var b2=makeid();
+	var c2=makeid();
+	var a3=makeid();
+	var b3=makeid();
+	var c3=makeid();
+	var a4=makeid();
+	var b4=makeid();
+	var c4=makeid();
+	var a5=makeid();
+	var b5=makeid();
+	var c5=makeid();
+	var a6=makeid();
+	var b6=makeid();
+	var c6=makeid();
+
+//onclick="document.getElementById('code').value = makeid()"
+newc.addEventListener("click", function(){
+	aa.textContent=makeid();
+	bb.textContent=makeid();
+	cc.textContent=makeid();
+	console.log(a1+" "+b1+" "+c1);
+	var a1=aa.textContent;
+	var b1=bb.textContent;
+	var c1=cc.textContent;
+	var a2=makeid();
+	var b2=makeid();
+	var c2=makeid();
+	var a3=makeid();
+	var b3=makeid();
+	var c3=makeid();
+	var a4=makeid();
+	var b4=makeid();
+	var c4=makeid();
+	var a5=makeid();
+	var b5=makeid();
+	var c5=makeid();
+	var a6=makeid();
+	var b6=makeid();
+	var c6=makeid();
+	document.querySelector(".circle1").style.backgroundColor = "rgb(" + a1 + ", " + b1 + ", " + c1 + ")";
+	document.querySelector(".circle2").style.backgroundColor = "rgb(" + a2 + ", " + b2 + ", " + c2 + ")";
+	document.querySelector(".circle3").style.backgroundColor = "rgb(" + a3 + ", " + b3 + ", " + c3 + ")";
+	document.querySelector(".circle4").style.backgroundColor = "rgb(" + a4 + ", " + b4 + ", " + c4 + ")";
+	document.querySelector(".circle5").style.backgroundColor = "rgb(" + a5 + ", " + b5 + ", " + c5 + ")";
+	document.querySelector(".circle6").style.backgroundColor = "rgb(" + a6 + ", " + b6 + ", " + c6 + ")"; 
+	document.querySelector(".circle7").style.backgroundColor = "rgb(" + a1 + ", " + b1 + ", " + c1 + ")"; 
+});
+easy.addEventListener("click", function(){
+	document.querySelector(".circle4").style.backgroundColor = "white";
+	document.querySelector(".circle5").style.backgroundColor = "white";
+	document.querySelector(".circle6").style.backgroundColor = "white";
+});
+hard.addEventListener("click", function(){
+	var a4=makeid();
+	var b4=makeid();
+	var c4=makeid();
+	var a5=makeid();
+	var b5=makeid();
+	var c5=makeid();
+	var a6=makeid();
+	var b6=makeid();
+	var c6=makeid();
+	document.querySelector(".circle4").style.backgroundColor = "rgb(" + a4 + ", " + b4 + ", " + c4 + ")";
+	document.querySelector(".circle5").style.backgroundColor = "rgb(" + a5 + ", " + b5 + ", " + c5 + ")";
+	document.querySelector(".circle6").style.backgroundColor = "rgb(" + a6 + ", " + b6 + ", " + c6 + ")"; 
+	
+});
+
+bc1.addEventListener("click", function(){
+	console.log(document.querySelector(".circle1").style.backgroundColor);
+	console.log(document.querySelector(".circle7").style.backgroundColor);
+	
+	if(document.querySelector(".circle1").style.backgroundColor===document.querySelector(".circle7").style.backgroundColor){
+		console.log("1");
+		document.querySelector(".up").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".easy").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".hard").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".newcolors").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".barr").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+
+	}
+		else{
+			console.log("0");
+		}
+	
+
+});
+
+bc2.addEventListener("click", function(){
+	if (document.querySelector(".circle1").style.backgroundColor===document.querySelector(".circle7").style.backgroundColor) {
+		document.querySelector(".circle2").style.backgroundColor="white";
+	}
+
+});
+
+bc3.addEventListener("click", function(){
+	if (document.querySelector(".circle1").style.backgroundColor===document.querySelector(".circle7").style.backgroundColor) {
+		document.querySelector(".circle3").style.backgroundColor="white";
+	}
+
+});
+
+bc4.addEventListener("click", function(){
+	if (document.querySelector(".circle1").style.backgroundColor===document.querySelector(".circle7").style.backgroundColor) {
+		document.querySelector(".circle4").style.backgroundColor="white";
+	}
+
+});
+
+bc5.addEventListener("click", function(){
+	if (document.querySelector(".circle1").style.backgroundColor===document.querySelector(".circle7").style.backgroundColor) {
+		document.querySelector(".circle5").style.backgroundColor="white";
+	}
+
+});
+
+bc6.addEventListener("click", function(){
+	if (document.querySelector(".circle1").style.backgroundColor===document.querySelector(".circle7").style.backgroundColor) {
+		document.querySelector(".circle6").style.backgroundColor="white";
+	}
+
+});
+	
+
+</script>
+</html>
