@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-  <title>Color Game</title>
-  <link rel="icon" type="image/png" href="http://pluspng.com/img-png/everything-you-need-to-know-on-muffler-deletes-http-forum-phoenix-icon-png-256.png">
+	<script type="text/javascript">
+		window.onload = function() {
+			document.querySelector(".newcolors").click();
+		};
+	</script>
+	<title>Color Game</title>
+	<link rel="icon" type="image/png" href="http://pluspng.com/img-png/everything-you-need-to-know-on-muffler-deletes-http-forum-phoenix-icon-png-256.png">
 	<style type="text/css">
 	@import url('https://fonts.googleapis.com/css?family=Montserrat');
 	body, html{
@@ -12,216 +16,281 @@
 		height: 100%;
 		padding: 0;
 		margin: 0;
+
 	}
 	input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
+	select:focus,
+	textarea:focus,
+	button:focus {
+		outline: none;
+	}
+canvas {
+   position: absolute;
+   z-index: -1;
+   bottom: 0%;
+   left: 0;
+   width: 100%;
+   height: 100%;
 }
+	.ball {
+		margin-top: 50px;
+		margin-left: -200px;
+		width: 120px;
+		height: 40px;
+		background-color: #EDE053;
+		border-radius: 20px;
+		transition: 1s;
+		line-height: 40px;
+		text-align: center;
+	}
 
-.ball {
-  margin-top: 50px;
-  margin-left: -200px;
-  width: 120px;
-  height: 40px;
-  background-color: #EDE053;
-  border-radius: 20px;
-  transition: 1s;
-  line-height: 40px;
-  text-align: center;
-}
 
+	.a{
+		font-family: Montserrat;
+		font-size: 25px;
+		text-align: center;
+		color :white;
 
-.a{
-	font-family: Montserrat;
-	font-size: 25px;
-	text-align: center;
-	color :white;
+	}
+	.up{
+		position: absolute;
+		width: 100%;
+		height: 200px;
+		top:0;
+		background-color: #053B3E;
+	}
+	.color{
+		font-family: Montserrat;
+		font-size: 50px;
+		text-align: center;
+		color: white;
+	}
+	.easy{
+		font-family: Montserrat;
+		font-size: 15px;
+		text-align: center;
+		background-color: #053B3E;
+		color: white;
+		font-weight: 800;
+	}
+	.hard{
+		font-family: Montserrat;
+		font-size: 15px;
+
+		background-color: #053B3E;
+		color: white;
+		font-weight: 800;
+	}
+	.newcolors{
+		font-family: Montserrat;
+		font-size: 15px;
+		background-color: #053B3E;
+		color: white;
+		margin-right: 100px;
+		font-weight: 800;
+	}
+	.barr{
+
+		background-color: white;
+		text-align: center;
+		top: 0;
+		margin-top: 200px;
+	}
+	.mystyle {
+		-webkit-transform: scale(5);
+        -ms-transform: scale(5);
+        transform: scale(11.5);
+        transition: 1.4s;
+
+	}
+	.circle1 {
+		height: 175px;
+		width: 175px;
+		position: absolute;
+		margin-left: 350px;
+		top: 0;
+		margin-top: 280px;
+		background-color: #053B3E;
+		border-radius: 50%;
+		border: solid 0px;
+	}
+	.circle1:hover{
+
+		border: 0px solid ;
+		
+		outline-color: black;
+		outline-offset: 15px;
+		text-shadow: 1px 1px 2px black; 
+
+	}
 	
-}
-.up{
-	position: absolute;
-	width: 100%;
-	height: 200px;
-	top:0;
-	background-color: #053B3E;
-}
-.color{
-	font-family: Montserrat;
-	font-size: 50px;
-	text-align: center;
-	color: white;
-}
-.easy{
-	font-family: Montserrat;
-	font-size: 15px;
-	text-align: center;
-	background-color: #053B3E;
-	color: white;
-	font-weight: 800;
-}
-.hard{
-	font-family: Montserrat;
-	font-size: 15px;
-	
-	background-color: #053B3E;
-	color: white;
-	font-weight: 800;
-}
-.newcolors{
-	font-family: Montserrat;
-	font-size: 15px;
-	background-color: #053B3E;
-	color: white;
-	margin-right: 100px;
-	font-weight: 800;
-}
-.barr{
-	
-	background-color: white;
-	text-align: center;
-	top: 0;
-	margin-top: 200px;
-}
-.circle1 {
-  height: 175px;
-  width: 175px;
-  position: absolute;
-  margin-left: 350px;
-  top: 0;
-  margin-top: 300px;
-  background-color: #053B3E;
-  border-radius: 50%;
-  border: solid 1px white;
-}
-.circle1:hover{
+	.circle2 {
+		height: 175px;
+		width: 175px;
+		position: absolute;
+		margin-left: 610px;
+		top: 0;
+		margin-top: 280px;
+		background-color: #053B3E;
+		border-radius: 50%;
+		border: solid 0px;
+	}
+	.circle2:hover{
 
-	border: 1px solid white;
-  box-shadow: inset 0 0 20px black, 0 0 20px white;
-  outline-color: black;
-  outline-offset: 15px;
-  text-shadow: 1px 1px 2px black; 
+		border: 0px solid ;
+		
+		outline-color: black;
+		outline-offset: 15px;
+		text-shadow: 1px 1px 2px black; 
 
-}
-.circle2 {
-  height: 175px;
-  width: 175px;
-  position: absolute;
-  margin-left: 610px;
-  top: 0;
-  margin-top: 300px;
-  background-color: #053B3E;
-  border-radius: 50%;
-  border: solid 1px white;
-}
-.circle2:hover{
+	}
+	.circle3 {
+		height: 175px;
+		width: 175px;
+		position: absolute;
+		margin-left: 870px;
+		top: 0;
+		margin-top: 280px;
+		background-color: #053B3E;
+		border-radius: 50%;
+		border: solid 0px;
+	}
+	.circle3:hover{
 
-border: 1px solid white;
-box-shadow: inset 0 0 20px black, 0 0 20px white;
-outline-color: black;
-outline-offset: 15px;
-text-shadow: 1px 1px 2px black; 
+		border: 0px solid ;
+		
+		outline-color: black;
+		outline-offset: 15px;
+		text-shadow: 1px 1px 2px black; 
 
-}
-.circle3 {
-  height: 175px;
-  width: 175px;
-  position: absolute;
-  margin-left: 870px;
-  top: 0;
-  margin-top: 300px;
-  background-color: #053B3E;
-  border-radius: 50%;
-  border: solid 1px white;
-}
-.circle3:hover{
+	}
+	.circle4 {
+		height: 175px;
+		width: 175px;
+		position: absolute;
+		margin-left: 350px;
+		top: 0;
+		margin-top: 480px;
+		background-color: #053B3E;
+		border: solid 0px;
+		border-radius: 50%;
+	}
+	.circle4:hover{
 
-border: 1px solid white;
-box-shadow: inset 0 0 20px black, 0 0 20px white;
-outline-color: black;
-outline-offset: 15px;
-text-shadow: 1px 1px 2px black; 
+		border: 0px solid ;
+		
+		outline-color: black;
+		outline-offset: 15px;
+		text-shadow: 1px 1px 2px black; 
 
-}
-.circle4 {
-  height: 175px;
-  width: 175px;
-  position: absolute;
-  margin-left: 350px;
-  top: 0;
-  margin-top: 480px;
-  background-color: #053B3E;
-  border: solid 1px white;
-  border-radius: 50%;
-}
-.circle4:hover{
+	}
+	.circle5 {
+		height: 175px;
+		width: 175px;
+		position: absolute;
+		margin-left: 610px;
+		top: 0;
+		margin-top: 480px;  
+		background-color: #053B3E;
+		border-radius: 50%;
+		border: solid 0px;
+	}
+	.circle5:hover{
 
-border: 1px solid white;
-box-shadow: inset 0 0 20px black, 0 0 20px white;
-outline-color: black;
-outline-offset: 15px;
-text-shadow: 1px 1px 2px black; 
+		border: 0px solid ;
+		
+		outline-color: black;
+		outline-offset: 15px;
+		text-shadow: 1px 1px 2px black; 
 
-}
-.circle5 {
-  height: 175px;
-  width: 175px;
-  position: absolute;
-  margin-left: 610px;
-  top: 0;
-  margin-top: 480px;  
-  background-color: #053B3E;
-  border-radius: 50%;
-  border: solid 1px white;
-}
-.circle5:hover{
+	}
+	.circle6 {
+		height: 175px;
+		width: 175px;
+		position: absolute;
+		margin-left: 870px;
+		top: 0;
+		margin-top: 480px;
+		position: absolute;
+		background-color: #053B3E;
+		border-radius: 50%;
+		border: solid 0px;
+	}
+	.circle6:hover{
 
-border: 1px solid white;
-box-shadow: inset 0 0 20px black, 0 0 20px white;
-outline-color: black;
-outline-offset: 15px;
-text-shadow: 1px 1px 2px black; 
+		border: 0px solid ;
+		
+		outline-color: black;
+		outline-offset: 15px;
+		text-shadow: 1px 1px 2px white; 
 
-}
-.circle6 {
-  height: 175px;
-  width: 175px;
-  position: absolute;
-  margin-left: 870px;
-  top: 0;
-  margin-top: 480px;
-  position: absolute;
-  background-color: #053B3E;
-  border-radius: 50%;
-  border: solid 1px white;
-}
-.circle6:hover{
-
-border: 1px solid white;
-box-shadow: inset 0 0 20px black, 0 0 20px white;
-outline-color: black;
-outline-offset: 15px;
-text-shadow: 1px 1px 2px white; 
-
-}
-.circle7 {
-  height: 0.1px;
-  width: 0.1px;
-  position: absolute;
-  margin-left: 1770px;
-  top: 0;
-  margin-top: 480px;
-  position: absolute;
-  background-color: #053B3E;
-  border-radius: 50%;
-  border: solid 1px white;
-}
+	}
+	.circle7 {
+		height: 0.1px;
+		width: 0.1px;
+		position: absolute;
+		margin-left: 1770px;
+		top: 0;
+		margin-top: 480px;
+		position: absolute;
+		background-color: #053B3E;
+		border-radius: 50%;
+		border: solid 1px white;
+	}
+	.animated {
+            background-image: url(/css/images/logo.png);
+            background-repeat: no-repeat;
+            background-position: left top;
+            padding-top:95px;
+            margin-bottom:60px;
+            -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+         }
+         
+         @-webkit-keyframes bounceInDown {
+            0% {
+               opacity: 0;
+               -webkit-transform: translateY(-2000px);
+            }
+            60% {
+               opacity: 1;
+               -webkit-transform: translateY(30px);
+            }
+            80% {
+               -webkit-transform: translateY(-10px);
+            }
+            100% { 
+               -webkit-transform: translateY(0);
+            }
+         }
+         
+         @keyframes bounceInDown {
+            0% {
+               opacity: 0;
+               transform: translateY(-2000px);
+            }
+            60% {
+               opacity: 1;
+               transform: translateY(30px);
+            }
+            80% {
+               transform: translateY(-10px);
+            }
+            100% {
+               transform: translateY(0);
+            }
+         }
+         
+         .bounceInDown {
+            -webkit-animation-name: bounceInDown;
+            animation-name: bounceInDown;
+         }
 
 </style>
 </head>
 <body>
-		
 
 	<div class="up" >
 		<p class="a" id="ss">THE GREAT GAME</p>
@@ -232,7 +301,7 @@ text-shadow: 1px 1px 2px white;
 		<span class="barr" ></span>
 		<button class="easy" id="easy">EASY</button>
 		<span class="barr"></span>
-	 	<button class="hard" id="hard">HARD</button>
+		<button class="hard" id="hard">HARD</button>
 	</div>
 	<span><button type="button" class="circle1" id="c1" ></button>
 		<button type="button" class="circle2" id="c2"></button>
@@ -242,35 +311,33 @@ text-shadow: 1px 1px 2px white;
 		<button type="button" class="circle6" id="c6"></button>
 		<button type="button" class="circle7" id="c6"></button>
 	</span>
-	
-	<div class="ball" id="ball">
-			Loaded
-		</div>
+
+	 <div id = "animated-example" class = "animated bounceInDown"></div>
 </body>
 <script>
 	
 	function makeid()
-    {
-    var randomnumber=Math.floor(Math.random() * 255);
-    return Math.floor(Math.random() * 255);
-}
+	{
+		var randomnumber=Math.floor(Math.random() * 255);
+		return Math.floor(Math.random() * 255);
+	}
 
-var min=1; 
-var max=6;  
-var random = Math.random() * (+max - +min) + +min; 
-var newc=document.querySelector("#newc");
-var bc1=document.querySelector("#c1");
-var bc2=document.querySelector("#c2");
-var bc3=document.querySelector("#c3");
-var bc4=document.querySelector("#c4");
-var bc5=document.querySelector("#c5");
-var bc6=document.querySelector("#c6");
-var easy=document.querySelector("#easy");
-var hard=document.querySelector("#hard");
-var aa=document.querySelector("#aa");
-var bb=document.querySelector("#bb");
-var cc=document.querySelector("#cc");
-var a1=aa.textContent;
+	var min=1; 
+	var max=6;  
+	var random = Math.random() * (+max - +min) + +min; 
+	var newc=document.querySelector("#newc");
+	var bc1=document.querySelector("#c1");
+	var bc2=document.querySelector("#c2");
+	var bc3=document.querySelector("#c3");
+	var bc4=document.querySelector("#c4");
+	var bc5=document.querySelector("#c5");
+	var bc6=document.querySelector("#c6");
+	var easy=document.querySelector("#easy");
+	var hard=document.querySelector("#hard");
+	var aa=document.querySelector("#aa");
+	var bb=document.querySelector("#bb");
+	var cc=document.querySelector("#cc");
+	var a1=aa.textContent;
 	var b1=bb.textContent;
 	var c1=cc.textContent;
 	var a2=makeid();
@@ -290,6 +357,17 @@ var a1=aa.textContent;
 	var c6=makeid();
 //onclick="document.getElementById('code').value = makeid()"
 newc.addEventListener("click", function(){
+	document.querySelector(".circle2").style.height="175px";
+document.querySelector(".circle2").style.width="175px";
+document.querySelector(".circle3").style.height="175px";
+document.querySelector(".circle3").style.width="175px";
+document.querySelector(".circle4").style.height="175px";
+document.querySelector(".circle4").style.width="175px";
+document.querySelector(".circle5").style.height="175px";
+document.querySelector(".circle5").style.width="175px";
+document.querySelector(".circle6").style.height="175px";
+document.querySelector(".circle6").style.display="175px";
+
 	aa.textContent=makeid();
 	bb.textContent=makeid();
 	cc.textContent=makeid();
@@ -327,7 +405,7 @@ newc.addEventListener("click", function(){
 	var w6="rgb(" + a6 + ", " + b6 + ", " + c6 + ")";
 
 	function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+		var currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
@@ -340,9 +418,9 @@ newc.addEventListener("click", function(){
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
-  }
+}
 
-  return array;
+return array;
 }
 
 // Used like so
@@ -353,37 +431,27 @@ console.log(arr3);
 var arr=[w1,w2,w3,w4,w5,w6];
 
 
-	
-	document.querySelector(".circle1").style.backgroundColor = arr[arr3[0]];
-	document.querySelector(".circle2").style.backgroundColor = arr[arr3[1]];
-	document.querySelector(".circle3").style.backgroundColor = arr[arr3[2]];
-	document.querySelector(".circle4").style.backgroundColor = arr[arr3[3]];
-	document.querySelector(".circle5").style.backgroundColor = arr[arr3[4]];
-	document.querySelector(".circle6").style.backgroundColor = arr[arr3[5]];
-	document.querySelector(".circle7").style.backgroundColor = "rgb(" + a1 + ", " + b1 + ", " + c1 + ")";
 
-	console.log(document.querySelector(".circle1").style.backgroundColor);
-	console.log(document.querySelector(".circle2").style.backgroundColor);
-	console.log(document.querySelector(".circle3").style.backgroundColor);
-	console.log(document.querySelector(".circle4").style.backgroundColor);
-	console.log(document.querySelector(".circle5").style.backgroundColor);
-	console.log(document.querySelector(".circle6").style.backgroundColor);
-	console.log(arr[arr3[0]]);
+document.querySelector(".circle1").style.backgroundColor = arr[arr3[0]];
+document.querySelector(".circle2").style.backgroundColor = arr[arr3[1]];
+document.querySelector(".circle3").style.backgroundColor = arr[arr3[2]];
+document.querySelector(".circle4").style.backgroundColor = arr[arr3[3]];
+document.querySelector(".circle5").style.backgroundColor = arr[arr3[4]];
+document.querySelector(".circle6").style.backgroundColor = arr[arr3[5]];
+document.querySelector(".circle7").style.backgroundColor = "rgb(" + a1 + ", " + b1 + ", " + c1 + ")";
+
+console.log(document.querySelector(".circle1").style.backgroundColor);
+console.log(document.querySelector(".circle2").style.backgroundColor);
+console.log(document.querySelector(".circle3").style.backgroundColor);
+console.log(document.querySelector(".circle4").style.backgroundColor);
+console.log(document.querySelector(".circle5").style.backgroundColor);
+console.log(document.querySelector(".circle6").style.backgroundColor);
+console.log(arr[arr3[0]]);
 
 
-	document.querySelector(".circle2").style.height="175px";
-	document.querySelector(".circle2").style.width="175px";
-	document.querySelector(".circle3").style.height="175px";
-	document.querySelector(".circle3").style.width="175px";
-	document.querySelector(".circle4").style.height="175px";
-	document.querySelector(".circle4").style.width="175px";
-	document.querySelector(".circle5").style.height="175px";
-	document.querySelector(".circle5").style.width="175px";
-	document.querySelector(".circle6").style.height="175px";
-	document.querySelector(".circle6").style.display="175px";
-	
 
-	
+
+
 
 });
 
@@ -418,6 +486,13 @@ bc1.addEventListener("click", function(){
 		document.querySelector(".hard").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".newcolors").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".barr").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".circle2").style.display="none";
+		document.querySelector(".circle3").style.display="none";
+		document.querySelector(".circle4").style.display="none";
+		document.querySelector(".circle5").style.display="none";
+		document.querySelector(".circle6").style.display="none";
+		var element = document.getElementById("c1");
+   		element.classList.toggle("mystyle");
 
 	}
 });
@@ -432,6 +507,13 @@ bc2.addEventListener("click", function(){
 		document.querySelector(".hard").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".newcolors").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".barr").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".circle3").style.display="none";
+		document.querySelector(".circle4").style.display="none";
+		document.querySelector(".circle5").style.display="none";
+		document.querySelector(".circle6").style.display="none";
+		document.querySelector(".circle1").style.display="none";
+		var element = document.getElementById("c2");
+   		element.classList.toggle("mystyle");
 
 	}
 });
@@ -446,6 +528,13 @@ bc3.addEventListener("click", function(){
 		document.querySelector(".hard").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".newcolors").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".barr").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".circle2").style.display="none";
+		document.querySelector(".circle4").style.display="none";
+		document.querySelector(".circle5").style.display="none";
+		document.querySelector(".circle6").style.display="none";
+		document.querySelector(".circle1").style.display="none";
+		var element = document.getElementById("c3");
+   		element.classList.toggle("mystyle");
 
 	}
 });
@@ -460,6 +549,13 @@ bc4.addEventListener("click", function(){
 		document.querySelector(".hard").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".newcolors").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".barr").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".circle2").style.display="none";
+		document.querySelector(".circle3").style.display="none";
+		document.querySelector(".circle5").style.display="none";
+		document.querySelector(".circle6").style.display="none";
+		document.querySelector(".circle1").style.display="none";
+		var element = document.getElementById("c4");
+   		element.classList.toggle("mystyle");
 
 	}
 });
@@ -474,6 +570,13 @@ bc5.addEventListener("click", function(){
 		document.querySelector(".hard").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".newcolors").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".barr").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".circle2").style.display="none";
+		document.querySelector(".circle3").style.display="none";
+		document.querySelector(".circle4").style.display="none";
+		document.querySelector(".circle6").style.display="none";
+		document.querySelector(".circle1").style.display="none";
+		var element = document.getElementById("c5");
+   		element.classList.toggle("mystyle");
 
 	}
 });
@@ -488,12 +591,133 @@ bc6.addEventListener("click", function(){
 		document.querySelector(".hard").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".newcolors").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
 		document.querySelector(".barr").style.backgroundColor=document.querySelector(".circle7").style.backgroundColor;
+		document.querySelector(".circle2").style.display="none";
+		document.querySelector(".circle3").style.display="none";
+		document.querySelector(".circle4").style.display="none";
+		document.querySelector(".circle5").style.display="none";
+		document.querySelector(".circle1").style.display="none";
+		var element = document.getElementById("c6");
+   		element.classList.toggle("mystyle");
 
 	}
 });
+let c = document.createElement('canvas').getContext('2d')
+let postctx = document.body.appendChild(document.createElement('canvas')).getContext('2d')
+let canvas = c.canvas
+let vertices = []
+
+// Effect Properties
+let vertexCount = 7000
+let vertexSize = 3
+let oceanWidth = 204
+let oceanHeight = -80
+let gridSize = 32;
+let waveSize = 16;
+let perspective = 100;
+
+// Common variables
+let depth = (vertexCount / oceanWidth * gridSize)
+let frame = 0
+let { sin, cos, tan, PI } = Math
+
+// Render loop
+let loop = () => {
+	let rad = sin(frame / 100) * PI / 20
+  let rad2 = sin(frame / 50) * PI / 10
+	frame++
+	if (postctx.canvas.width !== postctx.canvas.offsetWidth || postctx.canvas.height !== postctx.canvas.offsetHeight) { 
+  	postctx.canvas.width = canvas.width = postctx.canvas.offsetWidth
+    postctx.canvas.height = canvas.height = postctx.canvas.offsetHeight
+  }
+
+  
+	c.fillStyle = `hsl(200deg, 100%, 2%)`
+  c.fillRect(0, 0, canvas.width, canvas.height)
+  c.save()
+  c.translate(canvas.width / 2, canvas.height / 2)
+  
+  c.beginPath()
+  vertices.forEach((vertex, i) => {
+  	let ni = i + oceanWidth
+  	let x = vertex[0] - frame % (gridSize * 2)
+    let z = vertex[2] - frame * 2 % gridSize + (i % 2 === 0 ? gridSize / 2 : 0)
+  	let wave = (cos(frame / 45 + x / 50) - sin(frame / 20 + z / 50) + sin(frame / 30 + z*x / 10000))
+    let y = vertex[1] + wave * waveSize
+    let a = Math.max(0, 1 - (Math.sqrt(x ** 2 + z ** 2)) / depth)
+    let tx, ty, tz
+    
+    y -= oceanHeight
+    
+    // Transformation variables
+   	tx = x
+    ty = y
+    tz = z
+
+    // Rotation Y
+    tx = x * cos(rad) + z * sin(rad)
+    tz = -x * sin(rad) + z * cos(rad)
+    
+    x = tx
+    y = ty
+    z = tz
+    
+    // Rotation Z
+    tx = x * cos(rad) - y * sin(rad)
+    ty = x * sin(rad) + y * cos(rad) 
+    
+    x = tx;
+    y = ty;
+    z = tz;
+    
+    // Rotation X
+    
+    ty = y * cos(rad2) - z * sin(rad2)
+    tz = y * sin(rad2) + z * cos(rad2)
+    
+    x = tx;
+    y = ty;
+    z = tz;
+
+    x /= z / perspective
+    y /= z / perspective
+    
+    
+        
+    if (a < 0.01) return
+    if (z < 0) return
+   
+    
+    c.globalAlpha = a
+    c.fillStyle = `hsl(${180 + wave * 20}deg, 100%, 50%)`
+    c.fillRect(x - a * vertexSize / 2, y - a * vertexSize / 2, a * vertexSize, a * vertexSize)
+    c.globalAlpha = 1
+  })
+  c.restore()
+  
+  // Post-processing
+  postctx.drawImage(canvas, 0, 0)
+  
+  postctx.globalCompositeOperation = "screen"
+  postctx.filter = 'blur(16px)'
+  postctx.drawImage(canvas, 0, 0)
+  postctx.filter = 'blur(0)'
+  postctx.globalCompositeOperation = "source-over"
+  
+  requestAnimationFrame(loop)
+}
+
+// Generating dots
+for (let i = 0; i < vertexCount; i++) {
+	let x = i % oceanWidth
+  let y = 0
+  let z = i / oceanWidth >> 0
+	let offset = oceanWidth / 2
+	vertices.push([(-offset + x) * gridSize, y * gridSize, z * gridSize])
+}
+
+loop()
 
 
 
-	
 </script>
 </html>
